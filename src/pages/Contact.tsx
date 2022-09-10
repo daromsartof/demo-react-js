@@ -1,10 +1,13 @@
 import React from 'react'
 import ContactComponents from '../components/ContactComponents'
 import Description from '../components/Description'
+import Header from '../components/Header'
 
 
-function Contact() {
+function Contact(props:any) {
   return (
+    <>
+    <Header data={props.data} setClass={props.setClass}/> 
     <div>
         <div className='container-lg'>
             <section className="kl-about-body">
@@ -13,6 +16,7 @@ function Contact() {
             <ContactComponents />
         </div>
     </div>
+    </>
   )
 }
 
