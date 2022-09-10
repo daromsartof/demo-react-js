@@ -1,26 +1,45 @@
 import style from '../style/style'
 import "../assets/forms-style.css"
-import React, { useEffect, useState } from 'react';
-import "../assets/Portfolio.css"
+import React, { useEffect, useState,useContext,useRef } from 'react';
+import "../assets/Portfolio.css";
+import { userContext } from '../App';
+import emailjs from '@emailjs/browser';
 
-function ContactComponents(_data: any) {
-    const sendEmail = (e: any) => {
-        e.preventDefault();
-        
+function ContactComponents() {
+    
+    const form = React.useRef<HTMLFormElement>(null);
 
-        // emailjs.sendForm("service_q1frvag", "template_85aspz9", "#id-forms", "QSLA8g9okiFVR0Jcs")
-        //     .then((result?: any) => {
-        //         setSuccess(true);
-        //         document.querySelector('.kl-profil img')?.setAttribute('src', 'assets/image/profils.jpg');
-        //     }, (error: any) => {
-        //         setSuccess(false);
-
-        //     });
+    const sendEmail = (e:any) => {
+      e.preventDefault();
+      setIsLoading(true)
+      if (!form.current) return ;
+      const formData = new FormData(form.current);
+      const regeX =  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      let userEmail:any = formData.get('user_email');
+      if(!regeX.test(userEmail)){
+          setIsLoading(false);
+          return;
+      } else{
+        emailjs.sendForm('service_silmw6y', 'template_9v1nfoy', form.current ? form.current: '', '9adl0OChABWUnGDvt')
+        .then((result) => {
+            setIsLoading(false)
+            setStatus('success')
+        }, (error) => {
+            setIsLoading(false)
+            setStatus('error')
+        });
+      }
     };
+  
     var date = new Date();
     const [_success, setSuccess] = useState<boolean>(false);
     const [minheight, setminHeight] = useState<number>();
     const [_name, setName] = useState<string>("");
+    const { data } = useContext(userContext); 
+    const [isLoading,setIsLoading] = useState(false);
+    const [status,setStatus] = useState('hide');
+    
+
     useEffect(() => {
         const leftHeight = document.getElementsByClassName("kl-contact-left")[0].clientHeight;
         const rightHeiht = document.getElementsByClassName("kl-forms")[0].clientHeight;
@@ -37,27 +56,34 @@ function ContactComponents(_data: any) {
         <div>
             <div className='row'>
                 <div className='col-lg-3'>
-                    <ul className='kl-contact-left' style={{ minHeight: minheight }}>
-                        <li><span style={style.ThemeColor}>Adresse</span><p>{_data.address ? _data.address : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
-                        <li><span style={style.ThemeColor}>Telephone</span><p>{_data.phone ? _data.phone : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
-                        <li><span style={style.ThemeColor}>Email</span><p>{_data.email ? _data.email : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
+                    <ul className='kl-contact-left' style={{ minHeight: minheight , }}>
+                        <li><span style={style.ThemeColor}>Adresse</span><p>{data.profils.address ? data.profils.address : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
+                        <li><span style={style.ThemeColor}>Telephone</span><p>{data.profils.phone ? data.profils.phone : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
+                        <li><span style={style.ThemeColor}>Email</span><p>{data.profils.email ? data.profils.email : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
                         <li><span style={style.ThemeColor}>Reseaux sociaux</span>
                             <ul className='kl-reseau-sociaux'>
-                                <li><a href={"https://twitter.com/" + _data.twitter} target={"_blank"} rel="noreferrer" className="twitter" ><i className="fab fa-twitter-square"></i></a></li>
-                                <li><a href={"https://github.com/" + _data.github} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-github-square"></i></a></li>
-                                <li><a href={"https://gitlab.com/" + _data.gitlab} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-gitlab"></i></a></li>
-                                <li><a href={"https://www.facebook.com/" + _data.facebook} target={"_blank"} rel="noreferrer" className="facebook"><i className="fab fa-facebook-square"></i></a></li>
-                                <li><a href={"https://www.linkedin.com/" + _data.linkdln} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-linkedin"></i></a></li>
+                                <li><a href={"https://twitter.com/" + data.profils.social.twitter} target={"_blank"} rel="noreferrer" className="twitter" ><i className="fab fa-twitter-square"></i></a></li>
+                                <li><a href={"https://github.com/" + data.profils.social.github} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-github-square"></i></a></li>
+                                <li><a href={"https://gitlab.com/" + data.profils.social.gitlab} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-gitlab"></i></a></li>
+                                <li><a href={"https://www.facebook.com/" + data.profils.social.facebook} target={"_blank"} rel="noreferrer" className="facebook"><i className="fab fa-facebook-square"></i></a></li>
+                                <li><a href={"https://www.linkedin.com/" + data.profils.social.linkdln} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-linkedin"></i></a></li>
 
                             </ul>
+                        </li>
+                        <li style={{paddingTop:10}}>
+                            {status == 'success' ?
+                            <div className="alert alert-success animate__animated animate__bounceIn">
+                                <strong>Envoyé avec succès !</strong> Merci pour votre message.
+                            </div> : status == 'error' &&
+                            <div className="alert alert-danger animate__animated animate__bounceIn">
+                                <strong>Danger!</strong> Une Erreur s'est produits.
+                            </div>  
+                            }
                         </li>
                     </ul>
                 </div>
                 <div className='col-lg-9' >
-                    <form className='kl-forms' style={{ minHeight: minheight }} id="id-forms" onSubmit={sendEmail}>
-                        {_name && (
-                            <p className='animate__animated animate__slow animate__fadeIn'>{date.getHours() > 12 ? "bonsoir " : "bonjour "}<span>{_name}</span>, Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquam veritatis perferendis quidem voluptates consectetur natus, perspiciatis alias et consequatur maiores, qui similique officia reiciendis, accusantium facilis sequi reprehenderit! Magnam?</p>
-                        )}
+                    <form className='kl-forms' ref={form} style={{ minHeight: minheight }} id="id-forms" onSubmit={sendEmail}>
                         <div className='row' style={{ margin: "20px 0px" }}>
                             <div className='col-lg-6' >
                                 <input style={{ margin: "20px 0px" }} required typeof='text' onChange={(e) => setName(e.target.value)} placeholder='Nom' name="user_name" />
@@ -73,9 +99,10 @@ function ContactComponents(_data: any) {
                         </div>
                         <div className='row d-flex' style={{ justifyContent: "center", margin: "20px 0px" }} >
                             <button type="submit">
-                                {"Envoyer"}
+                                {"Envoyer"}{isLoading && <img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />} 
                             </button>
                         </div>
+                        
                     </form>
                 </div>
 

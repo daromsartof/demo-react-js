@@ -1,192 +1,196 @@
 {
+    "SkilsCategory" : [
+        {
+            "id":1,
+            "userSkils":[],
+            "uskCatTitle":"Front-end"
+        },
+        {
+            "id":2,
+            "userSkils":[],
+            "uskCatTitle":"Framework"
+        },
+        {
+            "id":3,
+            "userSkils":[],
+            "uskCatTitle":"Back-end"
+        },
+        {
+            "id":4,
+            "userSkils":[],
+            "uskCatTitle":"Autres"
+        }
+    ],
     "skils": [
         {
             "id": 0,
-            "category" : "langage",
-            "image_url" : "assets\\image\\logos_java.png",
-            "title" : "Java",
-            "val" : 60
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "reactJs.png",
+            "uskTitle" : "React-js",
+            "uskValue" : 60
         },
         {
             "id": 1,
-            "category" : "langage",
-            "image_url" : "assets\\image\\logos_javascript.png",
-            "title" : "JavaScript",
-            "val" : 70
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "javascript.png",
+            "uskTitle" : "JavaScript",
+            "uskValue" : 70
         },
         {
             "id": 2,
-            "category" : "framwork",
-            "image_url" : "assets\\image\\logos_symfony.png",
-            "title" : "Symfony",
-            "val" : 19
+            "uskCategory" : "Framework",
+            "uskImageUrl" : "symfony.png",
+            "uskTitle" : "Symfony",
+            "uskValue" : 19
         },
         {
             "id": 3,
-            "category" : "integration",
-            "image_url" : "assets\\image\\html5.svg",
-            "title" : "HTML",
-            "val" : 90
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "html.png",
+            "uskTitle" : "HTML",
+            "uskValue" : 90
         },
         {
             "id": 4,
-            "category" : "integration",
-            "image_url" : "assets\\image\\css3.svg",
-            "title" : "CSS",
-            "val" : 86
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "css.png",
+            "uskTitle" : "CSS",
+            "uskValue" : 86
         },
         {
             "id": 5,
-            "category" : "integration",
-            "image_url" : "assets\\image\\sass.svg",
-            "title" : "Sass",
-            "val" : 70
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "sass.png",
+            "uskTitle" : "Sass",
+            "uskValue" : 70
         },
         {
             "id": 6,
-            "category" : "langage",
-            "image_url" : "assets\\image\\typescript.svg",
-            "title" : "TypeScript",
-            "val" : 50
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "typeScript.png",
+            "uskTitle" : "TypeScript",
+            "uskValue" : 50
         },
         {
             "id": 7,
-            "category" : "integration",
-            "image_url" : "assets\\image\\jquery.svg",
-            "title" : "Jquery",
-            "val" : 60
+            "uskCategory" : "Front-end",
+            "uskImageUrl" : "jquery.png",
+            "uskTitle" : "Jquery",
+            "uskValue" : 60
+        },
+        {
+            "id": 8,
+            "uskCategory" : "Framework",
+            "uskImageUrl" : "reactJs.png",
+            "uskTitle" : "React-Native",
+            "uskValue" : 50
+        },
+        {
+            "id": 9,
+            "uskCategory" : "Framework",
+            "uskImageUrl" : "angular.png",
+            "uskTitle" : "Angular",
+            "uskValue" : 20
+        },
+        {
+            "id": 10,
+            "uskCategory" : "Autres",
+            "uskImageUrl" : "node.png",
+            "uskTitle" : "Node",
+            "uskValue" : 20
+        },
+        {
+            "id": 11,
+            "uskCategory" : "Autres",
+            "uskImageUrl" : "git.png",
+            "uskTitle" : "Git Cli",
+            "uskValue" : 60
+        },
+        {
+            "id": 12,
+            "uskCategory" : "Back-end",
+            "uskImageUrl" : "php.png",
+            "uskTitle" : "Php",
+            "uskValue" : 60
+        },
+        {
+            "id": 13,
+            "uskCategory" : "Autres",
+            "uskImageUrl" : "linux.png",
+            "uskTitle" : "Linux",
+            "uskValue" : 30
+        },
+        {
+            "id": 14,
+            "uskCategory" : "Back-end",
+            "uskImageUrl" : "mysql.png",
+            "uskTitle" : "Mysql",
+            "uskValue" : 60
+        }, {
+            "id": 15,
+            "uskCategory" : "Back-end",
+            "uskImageUrl" : "sql.png",
+            "uskTitle" : "Sql",
+            "uskValue" : 40
         }
     ],
     "profils": {
+        "profilsPath":"",
         "firstName": "Erika",
         "name": "Romeo",
-        "birthday": "21 janvier 2001",
+        "birthdays": "21 janvier 2001",
+        "biographie":"Je m’appelle Roméo Erika, je suis malagasy et j'habite à Madagascar.Dans ce portfolio que j'ai réalisé, je vais vous présenter mes compétences, mon parcours ainsi que mes principales intégrations.Pour toute question, n’hésitez pas à me contacter :)",
         "phone": "+261 34 72 863 14",
-        "contry": "Madagascar",
-        "old": "21 ans",
+        "city": "Madagascar",
+        "userOld": "21 ans",
         "email": "romeoerika.razaka@gmail.com",
         "degree": "Licence",
-        "speciality": "Developpeur web",
-        "twitter" : "romeoErika",
-        "github"  : "romeoErika",
-        "gitlab"  : "romeoeErik",
-        "facebook":"romeoRazaka",
-        "linkdln" :"romeoerika",
+        "profession": "Junior Dev",
+        "social":{
+            "twitter" : "romeoErika",
+            "github"  : "romeoErika",
+            "gitlab"  : "romeoeErik",
+            "facebook":"romeoRazaka",
+            "linkdln" :"romeoerika"
+        },
         "address" :"lot vs 52 Ter Avaratr'ankatso"
-    },
-    "cursusResume": {
-        "experiences" : [
-            {
-                "title" : "Stagiaire chez web & mobile success",
-                "start" : "Décembre 2021",
-                "end"   : "Présent",  
-                "lieu"  : "Tananarivo Madagascar",
-                "description" : ["Occupé d'un post d'integrateur Symfony & Wordpress","Mon rôle principale était de transformer les maquettes PDS en html et css."]
-            },
-            {
-                "title" : "Diplôme licence académique en informatique Base de Données et Génie Logiciel CNTEMAD(en cours)",
-                "start" : "2022",
-                "end"   : "",
-                "lieu"  : "Tananarivo Madagascar",
-                "description" : []
-            },
-            
-            {
-                "title" : "Diplôme de Baccalauréat série « D » lycée public ANDILAMENA",
-                "lieu"  : "lieu Andilamena , Alaotra magoro",
-                "start" : "2018",
-                "end"   : "2019",  
-                "description" : []
-            },
-            {
-                "title" : "Brevet d’Etude du Premier cycle au collège Saint François de salle",
-                "lieu"  : "lieu Andilamena , Alaotra magoro",
-                "start" : "2016",
-                "end"   : "2017",  
-                "description" : []
-            }
-        ],
-        "formations" : [
-            {
-                "title" : "Développement web front-end",
-                "start" : "2021",
-                "end"   : "", 
-                "lieu"  : "chez Nir'info Antananarivo", 
-                "description" : []
-            },
-            {
-                "title" : "Informatique Embarqué (robotique)",
-                "start" : "2021",
-                "end"   : "",
-                "lieu"  : "chez Club Robotika Madagascar",  
-                "description" : []
-            },
-            {
-                "title" : "Python & PHP & javascript",
-                "start" : "2019",
-                "end"   : "Présent",  
-                "lieu"  : "autodidact",
-                "description" : []
-            },
-            {
-                "title" : "Documentaire",
-                "start" : "",
-                "end"   : "",  
-                "lieu"  : "",
-                "description" : ["Science & technologie","Voyage","Decouvert"]
-            },
-            {
-                "title" : "Sport",
-                "start" : "",
-                "end"   : "",  
-                "lieu"  : "",
-                "description" : ["Basket Ball"]
-            },
-            {
-                "title" : "Bénévole dans une association",
-                "start" : "2022",
-                "end"   : "Présent",  
-                "lieu"  : "",
-                "description" : ["Ank'izy"]
-            }
-        ]
     },
     "porfolio":[
         {
             "id"   : 0,
-            "title" : "title 1",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
-            "image":"assets/image/prortfolio_2.jpg"
+            "usprTitle" : "Daroms-Art 2022 version Apk (encours)",
+            "usprDescription" : "",
+            "usprImagePath":"portfolio3.png"
         },
         {
             "id"   : 1,
-            "title" : "title 2",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
-            "image":"assets/image/portfolio_1.jpg"
+            "usprTitle" : "",
+            "usprDescription" : "",
+            "usprImagePath":"noImage.jpg"
         },
         {
             "id"   : 2,
-            "title" : "title 3",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
-            "image":"assets/image/w2.jpg"
+            "usprTitle" : "",
+            "usprDescription" : "",
+            "usprImagePath":"noImage.jpg"
         },
         {
             "id"   : 3,
-            "title" : "title 4",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
-            "image":"assets/image/pexels-danny-meneses-943096 1.jpg"
+            "usprTitle" : "",
+            "usprDescription" : "",
+            "usprImagePath":"noImage.jpg"
         },
         {
             "id"   : 4,
-            "title" : "title 5",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
-            "image":"assets/image/portfolio_3.jpg"
+            "usprTitle" : "Daroms-Art 2021 ",
+            "usprDescription" : "",
+            "usprImagePath":"portfolio2.png"
         },
         {
             "id"   : 5,
-            "title" : "title 6",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
-            "image":"assets/image/pexels-danny-meneses-943096 1.jpg"
+            "usprTitle" : "Daroms-Art 2022",
+            "usprDescription" : "",
+            "usprImagePath":"portfolio1.png"
         }
     ]
 }

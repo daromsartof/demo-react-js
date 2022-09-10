@@ -1,19 +1,13 @@
 import React from 'react';
 import '../assets/CursusResume.css';
 import { DataCursuType, date } from '../utils/TypeInterface';
-import { formatDate } from '../utils/Utils';
 
-function CursusResume(user_cursuses: any) {
-    const list_of_resume = (e: number,
-                            title: String,
-                            start:date, 
-                            end: date,
-                            lieu: String,
-                            description: Array<String>) => {
+function CursusResume() {    
+    const listOfResume = (e: number,title: String,start:string, end: string,lieu: String,description: Array<String>) => {
         return (
             <div key={e} className="resume-item">
                 <h4>{title}</h4>
-                {start.date || end.date ? (<h5>{formatDate(start.date)}{end && (" - " + formatDate(end.date))}</h5>) : ('')}
+                {start || end ? (<h5>{start}{end && (" - " + end)}</h5>) : ('')}
                 <p><em>{lieu}</em></p>
                 <ul>
                     {Object.entries(description).map((description: Array<String>, e: number) => <li key={e}><span></span>{description[1]}</li>)}
@@ -23,18 +17,30 @@ function CursusResume(user_cursuses: any) {
     }
 
 
+    const userCursuses:DataCursuType = {
+            id:0,
+            usCrsCategory:"cat",
+            usCrsTitle : "************************************",
+            usCrsStartDate : "******",
+            usCrsEndDate   : "******",  
+            usCrsPlace  : "****************",
+            usCrsDescription : [
+                "============================",
+                "============================"]
+    }
+        
+    const data = [userCursuses,userCursuses,userCursuses];
+
     const CursusResume: Array<any> = [
         {
             "id": 1,
             "title": "Experience & Diplôme",
-            "body": user_cursuses.data.length > 0 && user_cursuses.data.filter((cursu:DataCursuType) => cursu.usCrsCategory == "Experience")
-                .map((data: DataCursuType, e: number) => list_of_resume(e,data.usCrsTitle,data.usCrsStartDate, data.usCrsEndDate, data.usCrsPlace, data.usCrsDescription))
+            "body": data.map((data: DataCursuType, e: number) => listOfResume(e,data.usCrsTitle,data.usCrsStartDate, data.usCrsEndDate, data.usCrsPlace, data.usCrsDescription))
         },
         {
             "id": 2,
             "title": "Formation & Interêt",
-            "body": user_cursuses.data.length > 0 && user_cursuses.data.filter((cursu:DataCursuType) => cursu.usCrsCategory == "Formation")
-                   .map((data: DataCursuType, e: number) => list_of_resume(e,data.usCrsTitle,data.usCrsStartDate, data.usCrsEndDate, data.usCrsPlace, data.usCrsDescription))
+            "body": data.map((data: DataCursuType, e: number) => listOfResume(e,data.usCrsTitle,data.usCrsStartDate, data.usCrsEndDate, data.usCrsPlace, data.usCrsDescription))
         }
     ]
 

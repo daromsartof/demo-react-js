@@ -37,9 +37,8 @@ button[type="submit"]::before{
 }
 button[type="submit"]:hover {
     color: #FFAF2B;    
-}
-button[type="submit"]:hover button[type="submit"]::before{
-    width: 100%;
+    border-color: #FFAF2B;
+    background: #fff;
 }
 .kl-forms{
     box-shadow: 4px 8px 40px 0px #0000000D;

@@ -259,7 +259,7 @@ ul.kl-civil-content{
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding-right: 24px;
     background-color: rgb(241, 243, 244);
 }
@@ -329,7 +329,7 @@ ul.kl-civil-content{
 .kl-dots-wrap{
     height: 2px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     padding: 3px;
     align-items: center;
     padding-right: 24.74px;
@@ -352,10 +352,10 @@ ul.kl-civil-content{
 }
 
 .kl-skils{
-    margin: 20px 0px;
+    margin: 5px 0px;
     position: relative;
     align-items: center;
-    padding: 17px;
+    padding: 11px 17px;
     border: 1px solid rgba(0, 0, 0,0.1);
     box-shadow: 4px 4px 40px rgba(0, 0, 0,0.05);
     border-radius: 23px;
@@ -614,3 +614,4 @@ ul.kl-civil-content{
     color: #0363e1;
     transform: scale(1.5);    
 }
+

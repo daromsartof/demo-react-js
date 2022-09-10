@@ -1,6 +1,8 @@
 import Description from '../components/Description'
-import React from 'react';
+import React, { useContext } from 'react';
 import { BASE_UPLOAD } from '../reactAppEnv';
+import { userContext } from '../App';
+
 function PortfolioDetail(portfolio: any) {
   return (
     <>
@@ -24,7 +26,7 @@ function PortfolioDetail(portfolio: any) {
   )
 }
 
-function PortfolioComponents(data_portfolio: any): JSX.Element {
+function PortfolioContainer(data_portfolio: any): JSX.Element {
   const handlClic = (id:number) => {
     const e = document.querySelector('.item'+id+' .kl-portfoliot-content');
     const child = document.querySelector('.item'+id+' .kl-portfolio-title p span');
@@ -40,8 +42,8 @@ function PortfolioComponents(data_portfolio: any): JSX.Element {
           <div className='kl-portfolio-img' data-bs-toggle="modal" data-bs-target={"#exampleModal-" + data_portfolio.id}>
             <img key={data_portfolio.id} className='img-fluid' src={BASE_UPLOAD+data_portfolio.usprImagePath} alt={data_portfolio.usprTitle} style={{ height: "100%", objectFit: "cover" }} />
           </div>
-          <div className='kl-portfolio-title' onClick={e => handlClic(data_portfolio.id)}>
-            <p>{data_portfolio.usprTitle}<span style={{fontWeight:"bold"}}>+</span></p>
+          <div className='kl-portfolio-title' onClick={data_portfolio.usprTitle ? (e) => handlClic(data_portfolio.id) : () => {}}>
+            <p>{data_portfolio.usprTitle ? data_portfolio.usprTitle : '**********'}<span style={{fontWeight:"bold"}}>+</span></p>
           </div>
         </div>
       </div>
@@ -49,7 +51,9 @@ function PortfolioComponents(data_portfolio: any): JSX.Element {
   )
 }
 
-function Portfolio(props: any) {
+function Portfolio() {
+  const { data } = useContext(userContext); 
+  const portfolios = data.porfolio;
   const Animation = ["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight"];
   return (
     <>
@@ -57,10 +61,10 @@ function Portfolio(props: any) {
         <section className="kl-about-body">
           <Description _title={"Portfolio"} _more="" />
         </section>
-        {props.portfolio && props.portfolio.map((data: object,key:number) => <PortfolioDetail key={key} {...data} />)}
+        {portfolios && portfolios.map((data: object,key:number) => <PortfolioDetail key={key} {...data} />)}
         <section className="kl-portfolio">
           <div className='d-grid custom-grid'>
-            {props.portfolio && props.portfolio.map((data: object,key:number) => <PortfolioComponents key={key} {...data} animation={Animation}/>)}
+            {portfolios && portfolios.map((data: object,key:number) => <PortfolioContainer key={key} {...data} animation={Animation}/>)}
           </div>
         </section>
       </div>

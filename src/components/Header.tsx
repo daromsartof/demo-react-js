@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BASE_UPLOAD } from "../reactAppEnv";
-function Header (_data:any) {
-    
-    
+import { userContext } from "../App";
+function Header (_data:any) { 
     return (
         <>
             <div className="kl-header">
@@ -16,8 +15,8 @@ function Header (_data:any) {
                                         <img src={_data.profilsPath ? BASE_UPLOAD+_data.profilsPath :"assets/image/aboutee.png"} alt="profil" />
                                     </figure>
                                     <div>
-                                        <h1>{_data.name ? _data.name + " " + _data.firstName : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</h1>
-                                        <p>{_data.profession ? _data.profession : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p>
+                                        <h1>{_data.data.profils ? _data.data.profils.name + " " + _data.data.profils.firstName : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</h1>
+                                        <p>{_data.data.profils ? _data.data.profils.profession : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p>
                                     </div>
                                    
                                 </div>
@@ -42,7 +41,7 @@ function Header (_data:any) {
                             <li className="kl-nav-item"><NavLink  title="contact" className={(nav) => (nav.isActive ? 'active' : '')} to="/contact">Contact</NavLink></li>
                         </ul>
                     </div>
-                    <div className="home-navigate" style={{fontSize:20,padding:"0px 10px"}} onMouseEnter={() => console.log('jelll')} >
+                    <div className="home-navigate" style={{fontSize:20,padding:"0px 10px"}} >
                         <NavLink title="home" to={"/"} onClick={window.location.reload}><i className="fal fa-home-alt"></i></NavLink>   
                     </div>
                 </div>

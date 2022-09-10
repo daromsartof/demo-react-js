@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
+import { userContext } from '../App';
 import Description from './Description'
 
-function Civils(_data:any) {
-    
-    
+function Civils() {
+    const { data } = useContext(userContext); 
+ 
+      
     const formatDate = (dateString:string) => {
         var date:any    = dateString.slice(0,10).split('-');
         var now         = new Date(date[0],date[1]- 1,date[2]);
@@ -25,9 +27,9 @@ function Civils(_data:any) {
                             </div>
                         </div>
                         <ul className="kl-civil-content">
-                            <li><span>Date de naissance : </span>{_data.birthdays ? formatDate(_data.birthdays) :(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
-                            <li><span>Téléphone : </span><a style={{textDecoration:"none",color:"black"}} href={'tel:'+_data.phone} title={"call me"} >{_data.phone?_data.phone:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</a></li>
-                            <li><span>Pays :</span>{_data.city ?_data.city:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
+                            <li><span>Date de naissance : </span>{data.profils.birthdays ? data.profils.birthdays :(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
+                            <li><span>Téléphone : </span><a style={{textDecoration:"none",color:"black"}} href={'tel:'+data.profils.phone} title={"call me"} >{data.profils.phone?data.profils.phone:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</a></li>
+                            <li><span>Pays :</span>{data.profils.city ?data.profils.city:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
                         </ul>
                         <div className="kl-bar-bottom">
                             <div className="kl-progress">
@@ -52,9 +54,9 @@ function Civils(_data:any) {
                     <div className="kl-civil-about-right animate__animated animate__bounceInDown  animate__delay-1.5s">
                         <div className="kl-trait"></div>
                         <ul className="kl-civil-content">
-                            <li><span>Âge : </span>{_data.userOld ? _data.userOld :(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
-                            <li><span>Email : </span><a style={{textDecoration:"none",color:"black"}} title={_data.email} href={"mailto:"+_data.email}>{_data.email?_data.email:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</a></li>
-                            <li><span>Diplôme :</span>{_data.degree?_data.degree:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
+                            <li><span>Âge : </span>{data.profils.userOld ? data.profils.userOld :(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
+                            <li><span>Email : </span><a style={{textDecoration:"none",color:"black"}} title={data.profils.email} href={"mailto:"+data.profils.email}>{data.profils.email?data.profils.email:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</a></li>
+                            <li><span>Diplôme :</span>{data.profils.degree?data.profils.degree:(<img style={{maxWidth:"24px"}} src="assets\image\Dual Ring-1s-24px.gif" alt="load"/>)}</li>
                         </ul>
                         <div className="kl-dots">
                             <ul className="kl-dots-wrap">

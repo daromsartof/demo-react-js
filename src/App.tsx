@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import './assets/App.css';
 import './assets/Responsive.css';
 
@@ -12,39 +12,87 @@ import Resume from './pages/Resume';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Header from './components/Header';
-import { getApiData } from './utils/Utils';
+import { getDataType, GlobalDataType } from './utils/TypeInterface';
 
+let initialData:GlobalDataType = {
+  SkilsCategory:[],
+  skils: [],
+  profils: {
+    profilsPath:"",
+    firstName: "",
+    biographie:"",
+    ciriculumVitae:'',
+    name: "",
+    birthdays:"",
+    phone: "",
+    city: "",
+    userOld:0,
+    email: "",
+    degree:"",
+    profession:"",
+    social:{
+            twitter : "",
+            github  : "",
+            gitlab  : "",
+            facebook:"",
+            linkdln :""
+        },
+    address :""
+  },
+  porfolio:[]
+}; 
+
+
+export const userContext = createContext({
+  data : initialData
+});
 function App() {
-  const [user,setUser] = useState([null]);
+  const [user,setUser] = useState([]);
   const [cursuses, setCursuse] = useState([]);
   const [show_header,setHeader] = useState(true);
   const [skils,setSkils] = useState([]);
   const [porfolio,setPortfolio] = useState([]);
   const [skilsCategory,setSkilsCategory] = useState([]);
+  const [data, setData] = useState(initialData);
   const [_class , setClass]   = useState('');
+
+  const getData:getDataType = async () => {
+    try {
+      const response = fetch('data.json', {
+        headers: {
+          'content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        method:'GET'
+      });
+      const data = (await response).json();
+      data.then(e => setData(last => e));
+      if (!(await response).ok) throw new Error((await response).statusText);
+    } catch (error) {
+      console.log("Error :"+error);
+    } 
+  }
   useEffect(() => {
     window.location.pathname == "/" ? setHeader(false) : setHeader(true);
-    getApiData('api/civils',setUser,true);
-    getApiData('api/cursusresume',setCursuse);
-    getApiData('api/user_skils',setSkils);
-    getApiData('api/user_portfolios',setPortfolio);
-    getApiData('api/user_skils_categories',setSkilsCategory);
+      getData();   
   },[]);
   return (
+    <userContext.Provider value={{data}}>
     <div className={"animate__animated "+_class+" animate__delay-2s"}>
       <BrowserRouter>
-        {show_header && <Header {...user} setClass={setClass}/>} 
+        {show_header && <Header data={data} setClass={setClass}/>} 
         <Routes>
-          <Route path='/' element={<Home {...user}/>} />
-          <Route path='/about' element={<About {...user} skils = {skils} skilsCategory={skilsCategory} />} />
-          <Route path='/resume' element={<Resume data = {cursuses} />} />
-          <Route path='/portfolio' element={<Portfolio portfolio={porfolio} />} />
-          <Route path='/contact' element={<Contact {...user} />} />
+          <Route path='/' element={<Home profils={data.profils} />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/resume' element={<Resume />} />
+          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
 
       </BrowserRouter>
     </div>
+    </userContext.Provider >
 
   );
 }

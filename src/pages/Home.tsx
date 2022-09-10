@@ -2,9 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import '../assets/LaddingPage.css';
 import { BASE_UPLOAD, BASE_URL } from '../reactAppEnv';
+import { dataType } from '../utils/TypeInterface';
 
 
-function Home(user:any) {
+function Home(props:any) : JSX.Element {
     return (
         <div className="kl-home">
             <div className="kl-bag"></div>
@@ -16,18 +17,18 @@ function Home(user:any) {
                 <div className="kl-home-contents-left">
                     <div className="kl-left">
                         <p className="kl-color">Bonjour Je suis</p>
-                        <h1>{user.name ? user.name + " " + user.firstName : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</h1>
-                        <p className="kl-profession">{user.profession ? user.profession : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p>
-                        <p>{user.biographie ? user.biographie : ""}</p>
+                        <h1>{props.profils.name ? props.profils.name + " " + props.profils.firstName : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</h1>
+                        <p className="kl-profession">{props.profils.profession ? props.profils.profession : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p>
+                        <p>{props.profils.biographie ? props.profils.biographie : ""}</p>
                         <div className="kl-btn-container">
                             <NavLink  title="about"  className="btn" to={"/about"} onClick={window.location.reload}>Apropos</NavLink>
-                            <a className="btn" target='_blanck' href={user.ciriculumVitae ? BASE_URL+"uploads/"+user.ciriculumVitae : '#' }>Download CV <span><i className="far fa-download"></i></span></a>
+                            <a className="btn" target='_blanck' href={props.profils.ciriculumVitae ? BASE_URL+"uploads/"+props.profils.ciriculumVitae : '#' }>Download CV <span><i className="far fa-download"></i></span></a>
                         </div>
                     </div>
                 </div>
                 <div className="kl-home-contents-right">
                     <figure>
-                        <img src={user.profilsPath ? BASE_UPLOAD+user.profilsPath :"assets/image/aboutee.png"} alt="profil" />
+                        <img src={props.profils.profilsPath ? BASE_UPLOAD+props.profils.profilsPath :"assets/image/aboutee.png"} alt="profil" />
                         <div className="kl-deco"></div>  
                     </figure>
                      

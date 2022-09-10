@@ -1,8 +1,10 @@
-import React , { useState } from 'react';
+import React , { useContext, useState } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import { userContext } from '../App';
 import { SkilsCategoryType, SkilsType } from '../utils/TypeInterface';
 function Skills( props:any ): JSX.Element {
-    const [_filter, setFilter] = useState(0);
+    const { data } = useContext(userContext); 
+    const [_filter, setFilter] = useState("all");
     const [_class, setClass]   = useState('animate__bounceIn');
     const [activeClass,setActiveclass] = useState(0);
     const [height,setHeight]   = useState(0);
@@ -14,19 +16,19 @@ function Skills( props:any ): JSX.Element {
                     <figure><img src={"assets/image/" + image} alt="logo symfony" /></figure>
                     <div className="kl-skils-progress">
                         <span className="skill">{title} </span>
-                        <ProgressBar now={degree} />
+                      
                     </div>
                 </div>
             </div>
         )
     }
-    const handeFilter = (id:number , height:number) => {
+    const handeFilter = (name:string , height:number,id:number) => {
         const container =  document.querySelector('.kl-skils-content');
         if (container && height < container.clientHeight) setHeight(container.clientHeight);
         setClass('animate__bounceOut')
         setTimeout(() => {
             setClass('animate__bounceIn')
-            setFilter(id);
+            setFilter(name);
             setActiveclass(id);
         },100)
     }
@@ -37,15 +39,15 @@ function Skills( props:any ): JSX.Element {
             </div>
             <div className="kl-filter">
                 <ul>
-                    <li className={ activeClass == 0 ? "active-filter" : ""} onClick={() => handeFilter(0,height)}>#all</li>
-                    {props.skilsCategory && 
-                        props.skilsCategory.map((categorie:SkilsCategoryType,key:number) => <li className={ activeClass == categorie.id ? "active-filter" : ""} key={key} onClick={(e) => handeFilter(categorie.id,height)}>#{categorie.uskCatTitle}</li>)}
+                    <li className={ activeClass == 0 ? "active-filter" : ""} onClick={() => handeFilter('all',height,0)}>#Tous</li>
+                    {data.SkilsCategory && 
+                        data.SkilsCategory.map((categorie:SkilsCategoryType,key:number) => <li className={ activeClass == categorie.id ? "active-filter" : ""} key={key} onClick={(e) => handeFilter(categorie.uskCatTitle,height,categorie.id)}>#{categorie.uskCatTitle}</li>)}
                 </ul>
             </div>
             <div className="kl-skils-content" style={{minHeight:height}}>
                 <div className="row justify-content-center">
-                   {props._skils ?
-                        props._skils.filter((s:SkilsType) => s.uskCategory == "/api/user_skils_categories/"+_filter || _filter == 0 ).map((data:SkilsType) => skils(data.id, data.uskImageUrl, data.uskTitle, data.uskValue , _class)) : 
+                   {data.skils ?
+                        data.skils.filter((s:SkilsType) => s.uskCategory == _filter || _filter == "all" ).map((data:SkilsType) => skils(data.id, data.uskImageUrl, data.uskTitle, data.uskValue , _class)) : 
                         <img src="assets\image\Dual Ring-1s-137px.gif" alt="load" style={{width:60,height:40}} />
                     }
                 </div>
