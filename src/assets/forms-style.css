@@ -1,0 +1,71 @@
+button[type="submit"],input,textarea{
+    padding: 12px 19px;
+    border: 1px;
+    border-style: solid;
+    border-color: #c2c2c2;
+    border-radius: 30px;
+    width: 100%;
+    line-height: 1.5;
+    -moz-appearance: none;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input:focus,textarea:focus{
+    outline: 0;
+    border: 1px solid #FFAF2B;
+}
+button[type="submit"]{
+    color: #fff;
+    font-weight: 700;
+    max-width: 40%;
+    transition: all 0.2s ease-in;
+    border-color: #FFAF2B;
+    background-color: #FFAF2B;
+    position: relative;
+    overflow: hidden;
+}
+button[type="submit"]::before{
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 0%;
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    transition: all 0.3s ease-in-out;
+}
+button[type="submit"]:hover {
+    color: #FFAF2B;    
+}
+button[type="submit"]:hover button[type="submit"]::before{
+    width: 100%;
+}
+.kl-forms{
+    box-shadow: 4px 8px 40px 0px #0000000D;
+    padding: 20px 0px;
+    border-radius: 24px;
+    background-color: #fff;
+    transition: all 1s ease-in-out;
+}
+.kl-forms p{
+    padding: 0px calc(var(--bs-gutter-x) * .5);
+}
+.kl-forms p span{
+    font-weight: 600;
+}
+.kl-reseau-sociaux{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 10px 0px;
+    max-width: 170px;
+}
+.kl-reseau-sociaux li a{
+    text-decoration: none;
+    color: #646464;
+    transition: all 0.3s ease-in-out;
+}
+.kl-reseau-sociaux li a:hover{
+    color: #FFAF2B;
+}

@@ -1,0 +1,240 @@
+.kl-home {
+    width: 100%;
+    background-image: linear-gradient(39deg, transparent, #ffd15c38);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: start;
+}
+
+.kl-home-contents-right figure img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.kl-home-contents {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+@media screen and (min-width:820px) {
+
+
+    .kl-bag {
+        position: absolute;
+        width: 81px;
+        height: 219px;
+        background-color: #FFAF2B;
+        left: 0;
+        box-shadow: 3px 9px 10px #cbc5c5d9;
+        top: -108px;
+        transform: rotate(45deg);
+    }
+    .kl-bar {
+        background: #FFAF2B;
+        position: absolute;
+    }
+    .kl-bar-t,.kl-bar-b{
+        height: 4px;
+        width: 100%;
+        animation: bar-t 20s linear;
+    }
+    .kl-bar-t{
+        top: 0;
+    }
+    .kl-bar-r,.kl-bar-l{
+        height: 100%;
+        width: 4px;
+        animation-delay: 20s;
+        animation: bar-r 20s linear;
+    }
+    .kl-bar-l{
+        left: 0px;
+        bottom: 0;
+    }
+    .kl-bar-r{
+        top: 0;
+        right: 0px;
+    }
+    .kl-bar-b{
+        right: 0px;
+        bottom: 0px;
+    }
+    @keyframes bar-r{
+        0%{
+            height:0%;
+        }
+        50%{
+            height: 100%;
+        }
+        100%{
+            height: 0%;
+        }
+    }
+
+    @keyframes bar-t{
+        0%{
+            width:0%;
+        }
+        100%{
+            width: 100%;
+        }
+    }
+
+    .kl-home {
+        height: 100vh;
+    }
+
+    .kl-home-contents {
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .kl-home-contents-right figure {
+        position: relative;
+    }
+
+    .kl-deco {
+        position: absolute;
+        /* background: red; */
+        width: 100%;
+        box-shadow: 0px 0px 20px #35a9a2;
+        border-radius: 50%;
+        z-index: -1;
+        height: 100%;
+        border: solid 20px #35a9a2;
+        transform: rotate(45deg);
+        top: 44px;
+        left: 1px;
+    }
+}
+
+.kl-home-contents-right figure img {
+    box-shadow: 4px 1px 4px #ffaf2b;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:820px) {
+    .kl-home-contents {
+        padding-bottom: 10px;
+    }
+
+    .kl-home-contents-right figure {
+        padding: 30px 0px;
+    }
+
+    .kl-home-contents-right figure img {
+        background-color: #fffbf563;
+    }
+
+}
+
+.kl-color {
+    color: #FFAF2B;
+    font-size: 17px;
+    margin: 0px;
+    line-height: 26px;
+
+}
+
+.kl-left h1 {
+    font-weight: 600;
+    font-size: 65px;
+    color: rgb(1, 1, 1);
+}
+
+.kl-profession {
+    color: #35A9A2;
+    font-size: 23px;
+    margin-bottom: 3px;
+}
+
+.kl-left p {
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.kl-left p:not(p.kl-profession, p.kl-color) {
+    max-width: 500px;
+    color: #00000080;
+    font-size: 17px;
+}
+
+.kl-btn-container a {
+    font-size: 14px;
+}
+
+.kl-btn-container a.btn:focus {
+    box-shadow: none;
+}
+
+.kl-btn-container a:first-child::before,
+.kl-btn-container a:first-child::after {
+    color: #FFAF2B;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 0px;
+    font-weight: 600;
+    height: 100%;
+    background: #f1f1ed;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    top: 0;
+
+}
+
+.kl-btn-container a:first-child::before {
+    content: "<Apro";
+    left: 0;
+    justify-content: end;
+}
+
+.kl-btn-container a:first-child::after {
+    content: "pos />";
+    right: 0;
+    justify-content: start;
+}
+
+.kl-btn-container a:first-child:hover::after {
+    width: 50%;
+}
+
+.kl-btn-container a:first-child:hover::before {
+    width: 50%;
+}
+
+.kl-btn-container a:first-child:hover {
+    background-color: transparent;
+    color: #FFAF2B;
+}
+
+.kl-btn-container a:first-child {
+    position: relative;
+    border: solid 1px #FFAF2B;
+    background-color: #FFAF2B;
+    transition: all 0.3s ease-in-out;
+    padding: 9px 38px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.kl-btn-container a:not(.kl-btn-container a:first-child) {
+    color: #000;
+    font-weight: 700;
+}
+
+.kl-btn-container a span {
+    color: #FFAF2B;
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .container-xl.kl-home-contents {
+        max-width: 100%;
+    }
+}

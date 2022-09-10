@@ -1,0 +1,192 @@
+{
+    "skils": [
+        {
+            "id": 0,
+            "category" : "langage",
+            "image_url" : "assets\\image\\logos_java.png",
+            "title" : "Java",
+            "val" : 60
+        },
+        {
+            "id": 1,
+            "category" : "langage",
+            "image_url" : "assets\\image\\logos_javascript.png",
+            "title" : "JavaScript",
+            "val" : 70
+        },
+        {
+            "id": 2,
+            "category" : "framwork",
+            "image_url" : "assets\\image\\logos_symfony.png",
+            "title" : "Symfony",
+            "val" : 19
+        },
+        {
+            "id": 3,
+            "category" : "integration",
+            "image_url" : "assets\\image\\html5.svg",
+            "title" : "HTML",
+            "val" : 90
+        },
+        {
+            "id": 4,
+            "category" : "integration",
+            "image_url" : "assets\\image\\css3.svg",
+            "title" : "CSS",
+            "val" : 86
+        },
+        {
+            "id": 5,
+            "category" : "integration",
+            "image_url" : "assets\\image\\sass.svg",
+            "title" : "Sass",
+            "val" : 70
+        },
+        {
+            "id": 6,
+            "category" : "langage",
+            "image_url" : "assets\\image\\typescript.svg",
+            "title" : "TypeScript",
+            "val" : 50
+        },
+        {
+            "id": 7,
+            "category" : "integration",
+            "image_url" : "assets\\image\\jquery.svg",
+            "title" : "Jquery",
+            "val" : 60
+        }
+    ],
+    "profils": {
+        "firstName": "Erika",
+        "name": "Romeo",
+        "birthday": "21 janvier 2001",
+        "phone": "+261 34 72 863 14",
+        "contry": "Madagascar",
+        "old": "21 ans",
+        "email": "romeoerika.razaka@gmail.com",
+        "degree": "Licence",
+        "speciality": "Developpeur web",
+        "twitter" : "romeoErika",
+        "github"  : "romeoErika",
+        "gitlab"  : "romeoeErik",
+        "facebook":"romeoRazaka",
+        "linkdln" :"romeoerika",
+        "address" :"lot vs 52 Ter Avaratr'ankatso"
+    },
+    "cursusResume": {
+        "experiences" : [
+            {
+                "title" : "Stagiaire chez web & mobile success",
+                "start" : "Décembre 2021",
+                "end"   : "Présent",  
+                "lieu"  : "Tananarivo Madagascar",
+                "description" : ["Occupé d'un post d'integrateur Symfony & Wordpress","Mon rôle principale était de transformer les maquettes PDS en html et css."]
+            },
+            {
+                "title" : "Diplôme licence académique en informatique Base de Données et Génie Logiciel CNTEMAD(en cours)",
+                "start" : "2022",
+                "end"   : "",
+                "lieu"  : "Tananarivo Madagascar",
+                "description" : []
+            },
+            
+            {
+                "title" : "Diplôme de Baccalauréat série « D » lycée public ANDILAMENA",
+                "lieu"  : "lieu Andilamena , Alaotra magoro",
+                "start" : "2018",
+                "end"   : "2019",  
+                "description" : []
+            },
+            {
+                "title" : "Brevet d’Etude du Premier cycle au collège Saint François de salle",
+                "lieu"  : "lieu Andilamena , Alaotra magoro",
+                "start" : "2016",
+                "end"   : "2017",  
+                "description" : []
+            }
+        ],
+        "formations" : [
+            {
+                "title" : "Développement web front-end",
+                "start" : "2021",
+                "end"   : "", 
+                "lieu"  : "chez Nir'info Antananarivo", 
+                "description" : []
+            },
+            {
+                "title" : "Informatique Embarqué (robotique)",
+                "start" : "2021",
+                "end"   : "",
+                "lieu"  : "chez Club Robotika Madagascar",  
+                "description" : []
+            },
+            {
+                "title" : "Python & PHP & javascript",
+                "start" : "2019",
+                "end"   : "Présent",  
+                "lieu"  : "autodidact",
+                "description" : []
+            },
+            {
+                "title" : "Documentaire",
+                "start" : "",
+                "end"   : "",  
+                "lieu"  : "",
+                "description" : ["Science & technologie","Voyage","Decouvert"]
+            },
+            {
+                "title" : "Sport",
+                "start" : "",
+                "end"   : "",  
+                "lieu"  : "",
+                "description" : ["Basket Ball"]
+            },
+            {
+                "title" : "Bénévole dans une association",
+                "start" : "2022",
+                "end"   : "Présent",  
+                "lieu"  : "",
+                "description" : ["Ank'izy"]
+            }
+        ]
+    },
+    "porfolio":[
+        {
+            "id"   : 0,
+            "title" : "title 1",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
+            "image":"assets/image/prortfolio_2.jpg"
+        },
+        {
+            "id"   : 1,
+            "title" : "title 2",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
+            "image":"assets/image/portfolio_1.jpg"
+        },
+        {
+            "id"   : 2,
+            "title" : "title 3",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
+            "image":"assets/image/w2.jpg"
+        },
+        {
+            "id"   : 3,
+            "title" : "title 4",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
+            "image":"assets/image/pexels-danny-meneses-943096 1.jpg"
+        },
+        {
+            "id"   : 4,
+            "title" : "title 5",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
+            "image":"assets/image/portfolio_3.jpg"
+        },
+        {
+            "id"   : 5,
+            "title" : "title 6",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore numquam unde, optio magni culpa. Maiores optio quaerat excepturi dicta, repudiandae minima fuga, totam natus eaque eos officia eius esse!",
+            "image":"assets/image/pexels-danny-meneses-943096 1.jpg"
+        }
+    ]
+}
