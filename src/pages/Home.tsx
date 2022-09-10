@@ -21,7 +21,7 @@ function Home(props:any) : JSX.Element {
                         <p className="kl-profession">{props.profils.profession ? props.profils.profession : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p>
                         <p>{props.profils.biographie ? props.profils.biographie : ""}</p>
                         <div className="kl-btn-container">
-                            <NavLink  title="about"  className="btn" to={"/about"} onClick={window.location.reload}>Apropos</NavLink>
+                            <NavLink  title="about"  className="btn" to={"/about"} >Apropos</NavLink>
                             <a className="btn" target='_blanck' href={props.profils.ciriculumVitae ? BASE_URL+"uploads/"+props.profils.ciriculumVitae : '#' }>Download CV <span><i className="far fa-download"></i></span></a>
                         </div>
                     </div>
