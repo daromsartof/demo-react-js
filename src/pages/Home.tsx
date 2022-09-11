@@ -22,7 +22,7 @@ function Home(props:any) : JSX.Element {
                         <p>{props.profils.biographie ? props.profils.biographie : ""}</p>
                         <div className="kl-btn-container">
                             <NavLink  title="about"  className="btn" to={"/about"} onClick={() => props.setShowHeader(true)}>Apropos</NavLink>
-                            <a className="btn" target='_blanck' href={props.profils.ciriculumVitae ? BASE_URL+"uploads/"+props.profils.ciriculumVitae : '#' }>Download CV <span><i className="far fa-download"></i></span></a>
+                            <a className="btn" target='_blanck' href={props.profils.ciriculumVitae ? BASE_URL+"uploads/"+props.profils.ciriculumVitae : '#' }>Télécharger CV <span><i className="far fa-download"></i></span></a>
                         </div>
                     </div>
                 </div>

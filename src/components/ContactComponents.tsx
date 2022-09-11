@@ -58,9 +58,9 @@ function ContactComponents() {
                 <div className='col-lg-3'>
                     <ul className='kl-contact-left' style={{ minHeight: minheight , }}>
                         <li><span style={style.ThemeColor}>Adresse</span><p>{data.profils.address ? data.profils.address : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
-                        <li><span style={style.ThemeColor}>Telephone</span><p>{data.profils.phone ? data.profils.phone : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
+                        <li><span style={style.ThemeColor}>Téléphone</span><p>{data.profils.phone ? data.profils.phone : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
                         <li><span style={style.ThemeColor}>Email</span><p>{data.profils.email ? data.profils.email : (<img src="assets\image\Dual Ring-1s-24px.gif" alt="load" />)}</p></li>
-                        <li><span style={style.ThemeColor}>Reseaux sociaux</span>
+                        <li><span style={style.ThemeColor}>Réseaux sociaux</span>
                             <ul className='kl-reseau-sociaux'>
                                 <li><a href={"https://twitter.com/" + data.profils.social.twitter} target={"_blank"} rel="noreferrer" className="twitter" ><i className="fab fa-twitter-square"></i></a></li>
                                 <li><a href={"https://github.com/" + data.profils.social.github} target={"_blank"} rel="noreferrer" className="linkedin"><i className="fab fa-github-square"></i></a></li>

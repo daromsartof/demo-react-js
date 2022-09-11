@@ -15,7 +15,7 @@ function Civils() {
     }
     return (
         <section className="kl-about-body">
-            <Description _title="Abouts" _more="" />
+            <Description _title="Etat Civil" _more="" />
             <div className="row kl-civil">
                 <div className="col-lg-6">
                     <div className="kl-civil-about-left animate__animated animate__bounceInUp  animate__delay-1s" >
