@@ -6,8 +6,6 @@ import Header from '../components/Header'
 
 function Contact(props:any) {
   return (
-    <>
-    <Header data={props.data} setClass={props.setClass}/> 
     <div>
         <div className='container-lg'>
             <section className="kl-about-body">
@@ -16,7 +14,6 @@ function Contact(props:any) {
             <ContactComponents />
         </div>
     </div>
-    </>
   )
 }
 

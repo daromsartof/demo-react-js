@@ -49,7 +49,7 @@ export const userContext = createContext({
 function App() {
   const [user,setUser] = useState([]);
   const [cursuses, setCursuse] = useState([]);
-  const [show_header,setHeader] = useState(true);
+  const [showHeader,setHeader] = useState(false);
   const [skils,setSkils] = useState([]);
   const [porfolio,setPortfolio] = useState([]);
   const [skilsCategory,setSkilsCategory] = useState([]);
@@ -78,20 +78,20 @@ function App() {
   },[]);
   return (
     <userContext.Provider value={{data}}>
-    <div className={"animate__animated "+_class+" animate__delay-2s"}>
-      <BrowserRouter>
-        {show_header && <Header data={data} setClass={setClass}/>} 
-        <Routes>
-          <Route path='/' element={<Home profils={data.profils} />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/resume' element={<Resume />} />
-          <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='*' element={<PageNotFound />} />
-        </Routes>
+      <div className={"animate__animated "+_class+" animate__delay-2s"}>
+        <BrowserRouter> 
+         {showHeader && <Header data={data} setShowHeader={setHeader} /> }
+          <Routes>
+            <Route path='/' element={<Home profils={data.profils} setShowHeader={setHeader}/>} />
+            <Route path='/about' element={<About  />}/>
+            <Route path='/resume' element={<Resume  />} />
+            <Route path='/portfolio' element={<Portfolio  />} />
+            <Route path='/contact' element={<Contact  />} />
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
 
-      </BrowserRouter>
-    </div>
+        </BrowserRouter>
+      </div>
     </userContext.Provider >
 
   );

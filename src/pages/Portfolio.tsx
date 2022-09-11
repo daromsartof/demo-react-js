@@ -52,13 +52,12 @@ function PortfolioContainer(data_portfolio: any): JSX.Element {
   )
 }
 
-function Portfolio(props:any) {
+function Portfolio() {
   const { data } = useContext(userContext); 
   const portfolios = data.porfolio;
   const Animation = ["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight"];
   return (
     <>
-     <Header data={props.data} setClass={props.setClass}/>  
       <div className='container-lg mb-5'>
         <section className="kl-about-body">
           <Description _title={"Portfolio"} _more="" />
