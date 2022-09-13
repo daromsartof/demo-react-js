@@ -6,55 +6,24 @@ import './assets/Responsive.css';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-import PageNotFound from './pages/PageNotFound';
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Header from './components/Header';
-import { getDataType, GlobalDataType } from './utils/TypeInterface';
+import { getDataType } from './utils/TypeInterface';
+import { initialData } from './utils/constants';
+import PageNotFound from './pages/PageNotFound';
 
-let initialData:GlobalDataType = {
-  SkilsCategory:[],
-  skils: [],
-  profils: {
-    profilsPath:"",
-    firstName: "",
-    biographie:"",
-    ciriculumVitae:'',
-    name: "",
-    birthdays:"",
-    phone: "",
-    city: "",
-    userOld:0,
-    email: "",
-    degree:"",
-    profession:"",
-    social:{
-            twitter : "",
-            github  : "",
-            gitlab  : "",
-            facebook:"",
-            linkdln :""
-        },
-    address :""
-  },
-  porfolio:[]
-}; 
 
 
 export const userContext = createContext({
   data : initialData
 });
 function App() {
-  const [user,setUser] = useState([]);
-  const [cursuses, setCursuse] = useState([]);
   const [showHeader,setHeader] = useState(false);
-  const [skils,setSkils] = useState([]);
-  const [porfolio,setPortfolio] = useState([]);
-  const [skilsCategory,setSkilsCategory] = useState([]);
-  const [data, setData] = useState(initialData);
-  const [_class , setClass]   = useState('');
+  const [data, setData]        = useState(initialData);
+  const [_class , setClass]    = useState('');
 
   const getData:getDataType = async () => {
     try {

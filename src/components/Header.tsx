@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React, { useContext, useState } from 'react';
-import { BASE_UPLOAD } from "../reactAppEnv";
 import { userContext } from "../App";
+import { BASE_UPLOAD } from "../utils/constants";
 function Header (props:any) { 
     return (
         <>

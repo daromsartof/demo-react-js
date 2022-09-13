@@ -1,8 +1,8 @@
 import Description from '../components/Description'
 import React, { useContext } from 'react';
-import { BASE_UPLOAD } from '../reactAppEnv';
 import { userContext } from '../App';
-import Header from '../components/Header';
+import { PortFolioType } from '../utils/TypeInterface';
+import { BASE_UPLOAD } from '../utils/constants';
 
 function PortfolioDetail(portfolio: any) {
   return (
@@ -27,7 +27,8 @@ function PortfolioDetail(portfolio: any) {
   )
 }
 
-function PortfolioContainer(data_portfolio: any): JSX.Element {
+function PortfolioContainer(props:any): JSX.Element {
+
   const handlClic = (id:number) => {
     const e = document.querySelector('.item'+id+' .kl-portfoliot-content');
     const child = document.querySelector('.item'+id+' .kl-portfolio-title p span');
@@ -36,15 +37,16 @@ function PortfolioContainer(data_portfolio: any): JSX.Element {
       child.innerHTML = (child && e.clientHeight > 45 ) ? "+" : "-"
     }
   }
+
   return (
     <>
-      <div className={"item" + data_portfolio.id + " animate__animated animate__"+data_portfolio.animation[data_portfolio.id]} key={data_portfolio.id}>
-        <div className={(data_portfolio.id != 5) ? 'kl-portfoliot-content hide' : 'kl-portfoliot-content'}>
-          <div className='kl-portfolio-img' data-bs-toggle="modal" data-bs-target={"#exampleModal-" + data_portfolio.id}>
-            <img key={data_portfolio.id} className='img-fluid' src={BASE_UPLOAD+data_portfolio.usprImagePath} alt={data_portfolio.usprTitle} style={{ height: "100%", objectFit: "cover" }} />
+      <div className={"item" + props.id + " animate__animated animate__"+props.animation[props.id]} key={props.id}>
+        <div className={(props.id != 5) ? 'kl-portfoliot-content hide' : 'kl-portfoliot-content'}>
+          <div className='kl-portfolio-img' data-bs-toggle="modal" data-bs-target={"#exampleModal-" + props.id}>
+            <img key={props.id} className='img-fluid' src={BASE_UPLOAD+props.usprImagePath} alt={props.usprTitle} style={{ height: "100%", objectFit: "cover" }} />
           </div>
-          <div className='kl-portfolio-title' onClick={data_portfolio.usprTitle ? (e) => handlClic(data_portfolio.id) : () => {}}>
-            <p>{data_portfolio.usprTitle ? data_portfolio.usprTitle : '**********'}<span style={{fontWeight:"bold"}}>+</span></p>
+          <div className='kl-portfolio-title' onClick={props.usprTitle ? (e) => handlClic(props.id) : () => {}}>
+            <p>{props.usprTitle ? props.usprTitle : '**********'}<span style={{fontWeight:"bold"}}>+</span></p>
           </div>
         </div>
       </div>
@@ -53,9 +55,11 @@ function PortfolioContainer(data_portfolio: any): JSX.Element {
 }
 
 function Portfolio() {
-  const { data } = useContext(userContext); 
-  const portfolios = data.porfolio;
-  const Animation = ["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight"];
+  const { data }                        = useContext(userContext); 
+  const portfolios:Array<PortFolioType> = data.porfolio;
+  const Animation:Array<string>         = ["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight"];
+
+
   return (
     <>
       <div className='container-lg mb-5'>

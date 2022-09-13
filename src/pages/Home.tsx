@@ -1,8 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import '../assets/LaddingPage.css';
-import { BASE_UPLOAD, BASE_URL } from '../reactAppEnv';
-import { dataType } from '../utils/TypeInterface';
+import { BASE_UPLOAD, BASE_URL } from '../utils/constants';
 
 
 function Home(props:any) : JSX.Element {

@@ -3,11 +3,14 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { userContext } from '../App';
 import { SkilsCategoryType, SkilsType } from '../utils/TypeInterface';
 function Skills( props:any ): JSX.Element {
-    const { data } = useContext(userContext); 
-    const [_filter, setFilter] = useState("all");
-    const [_class, setClass]   = useState('animate__bounceIn');
-    const [activeClass,setActiveclass] = useState(0);
-    const [height,setHeight]   = useState(0);
+    const { data }                     = useContext(userContext); 
+    const [_filter, setFilter]         = useState<string>("all");
+    const [_class, setClass]           = useState<string>('animate__bounceIn');
+    const [activeClass,setActiveclass] = useState<number>(0);
+    const [height,setHeight]           = useState<number>(0);
+
+
+
     const skils = (id: number, image: string, title: string, degree: number,_class: String) => {
         const delai = parseInt((id / 4).toString());
         return (
@@ -22,6 +25,8 @@ function Skills( props:any ): JSX.Element {
             </div>
         )
     }
+
+
     const handeFilter = (name:string , height:number,id:number) => {
         const container =  document.querySelector('.kl-skils-content');
         if (container && height < container.clientHeight) setHeight(container.clientHeight);
@@ -32,6 +37,8 @@ function Skills( props:any ): JSX.Element {
             setActiveclass(id);
         },100)
     }
+
+    
     return (
         <section className="kl-skils-body pb-5">
             <div className="kl-title">

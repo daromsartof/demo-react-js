@@ -3,6 +3,7 @@ import '../assets/CursusResume.css';
 import { DataCursuType, date } from '../utils/TypeInterface';
 
 function CursusResume() {    
+
     const listOfResume = (e: number,title: String,start:string, end: string,lieu: String,description: Array<String>) => {
         return (
             <div key={e} className="resume-item">
@@ -29,9 +30,9 @@ function CursusResume() {
                 "============================"]
     }
         
-    const data = [userCursuses,userCursuses,userCursuses];
+    const data:Array<DataCursuType> = [userCursuses,userCursuses,userCursuses];
 
-    const CursusResume: Array<any> = [
+    const CursusResume: Array<any>  = [
         {
             "id": 1,
             "title": "Experience & Diplôme",

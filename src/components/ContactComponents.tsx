@@ -4,10 +4,17 @@ import React, { useEffect, useState,useContext,useRef } from 'react';
 import "../assets/Portfolio.css";
 import { userContext } from '../App';
 import emailjs from '@emailjs/browser';
+import { GlobalDataType } from '../utils/TypeInterface';
 
 function ContactComponents() {
-    
-    const form = React.useRef<HTMLFormElement>(null);
+    var date = new Date();
+    const [_success, setSuccess]    = useState<boolean>(false);
+    const [minheight, setminHeight] = useState<number>();
+    const [_name, setName]          = useState<string>('');
+    const { data }                  = useContext<{data:GlobalDataType}>(userContext); 
+    const [isLoading,setIsLoading]  = useState<boolean>(false);
+    const [status,setStatus]        = useState<string>('hide');
+    const form                      = useRef<HTMLFormElement>(null);
 
     const sendEmail = (e:any) => {
       e.preventDefault();
@@ -30,14 +37,6 @@ function ContactComponents() {
         });
       }
     };
-  
-    var date = new Date();
-    const [_success, setSuccess] = useState<boolean>(false);
-    const [minheight, setminHeight] = useState<number>();
-    const [_name, setName] = useState<string>("");
-    const { data } = useContext(userContext); 
-    const [isLoading,setIsLoading] = useState(false);
-    const [status,setStatus] = useState('hide');
     
 
     useEffect(() => {
@@ -45,6 +44,8 @@ function ContactComponents() {
         const rightHeiht = document.getElementsByClassName("kl-forms")[0].clientHeight;
         setminHeight(heightcalcul(leftHeight, rightHeiht))
     }, []);
+
+    
     const heightcalcul = (leftHeight: number, rightHeiht: number) => {
         if (leftHeight > rightHeiht) {
             return leftHeight

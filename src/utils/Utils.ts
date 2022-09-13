@@ -1,4 +1,5 @@
-import { BASE_URL } from "../reactAppEnv";
+import { BASE_URL } from "./constants";
+
 
 export  const formatDate = (dateString:string) => {
     var now         = new Date(dateString);
@@ -6,7 +7,7 @@ export  const formatDate = (dateString:string) => {
     return now.toLocaleDateString("fr", options);
 }
 
-export const getApiData = async (url : string,call_back : any , array :boolean = false , index : number = 0) => {    
+export const getApiData = async (url : string,callBack : any , array :boolean = false , index : number = 0) => {    
     try {
       const response = fetch(BASE_URL+url, {
         headers: {
@@ -16,9 +17,12 @@ export const getApiData = async (url : string,call_back : any , array :boolean =
         method:'GET'
       });
       const data = (await response).json();
-      data.then(e => !array ? call_back(e) : call_back(e[index]));
+      data.then(e => !array ? callBack(e) : callBack(e[index]));
       if (!(await response).ok) throw new Error((await response).statusText);
     } catch (error) {
       console.log("Error :"+error);
     } 
   }
+export const sum = (a:number , b:number) => {
+  return a + b;
+}
