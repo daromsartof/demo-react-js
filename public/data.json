@@ -8,15 +8,10 @@
         {
             "id":2,
             "userSkils":[],
-            "uskCatTitle":"Framework"
-        },
-        {
-            "id":3,
-            "userSkils":[],
             "uskCatTitle":"Back-end"
         },
         {
-            "id":4,
+            "id":3,
             "userSkils":[],
             "uskCatTitle":"Autres"
         }
@@ -38,7 +33,7 @@
         },
         {
             "id": 2,
-            "uskCategory" : "Framework",
+            "uskCategory" : "Back-end",
             "uskImageUrl" : "symfony.png",
             "uskTitle" : "Symfony",
             "uskValue" : 19
@@ -80,21 +75,21 @@
         },
         {
             "id": 8,
-            "uskCategory" : "Framework",
+            "uskCategory" : "Front-end",
             "uskImageUrl" : "reactJs.png",
             "uskTitle" : "React-Native",
             "uskValue" : 50
         },
         {
             "id": 9,
-            "uskCategory" : "Framework",
+            "uskCategory" : "Front-end",
             "uskImageUrl" : "angular.png",
             "uskTitle" : "Angular",
             "uskValue" : 20
         },
         {
             "id": 10,
-            "uskCategory" : "Autres",
+            "uskCategory" : "Back-end",
             "uskImageUrl" : "node.png",
             "uskTitle" : "Node",
             "uskValue" : 20
