@@ -1,5 +1,4 @@
 import React , { useContext, useState } from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import { userContext } from '../App';
 import { SkilsCategoryType, SkilsType } from '../utils/TypeInterface';
 function Skills( props:any ): JSX.Element {

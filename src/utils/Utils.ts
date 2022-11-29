@@ -23,6 +23,3 @@ export const getApiData = async (url : string,callBack : any , array :boolean = 
       console.log("Error :"+error);
     } 
   }
-export const sum = (a:number , b:number) => {
-  return a + b;
-}

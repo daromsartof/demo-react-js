@@ -32,7 +32,7 @@ function CursusResume() {
         
     const data:Array<DataCursuType> = [userCursuses,userCursuses,userCursuses];
 
-    const CursusResume: Array<any>  = [
+    const CursusResume: Array<{id: number,title: string,body: any}>  = [
         {
             "id": 1,
             "title": "Experience & Diplôme",

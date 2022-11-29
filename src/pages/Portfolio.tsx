@@ -57,7 +57,7 @@ function PortfolioContainer(props:any): JSX.Element {
 function Portfolio() {
   const { data }                        = useContext(userContext); 
   const portfolios:Array<PortFolioType> = data.porfolio;
-  const Animation:Array<string>         = ["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight"];
+  const Animation: String[]         = ["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight"];
 
 
   return (

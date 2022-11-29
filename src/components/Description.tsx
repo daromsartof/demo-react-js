@@ -1,6 +1,9 @@
 import React from 'react'
 
-function Description(_props:any):JSX.Element {
+function Description(_props: {
+  _title : string , 
+  _more : string | undefined
+}):JSX.Element {
   return (
     <div className="kl-title">
         <h3>{_props._title}</h3>
