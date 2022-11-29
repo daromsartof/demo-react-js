@@ -1,9 +1,9 @@
 ## Raha andefa ity projet ity dia ireto avy ny etapy arahina 
 
-// clonena ilay projet
+// clonena ilay projet \n
 git clone https://github.com/daromsartof/demo-react-js.git
 
-//miditra ao amin'lay repertoira misy ilay projet
+//miditra ao amin'lay repertoira misy ilay projet 
 cd demo-react-js
 
 //instalena ny yarn
