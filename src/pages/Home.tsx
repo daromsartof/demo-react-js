@@ -6,6 +6,7 @@ import { BASE_UPLOAD, BASE_URL } from '../utils/constants';
 
 function Home(props:any) : JSX.Element {
     return (
+        
         <div className="kl-home">
             <div className="kl-bag"></div>
             <div className="kl-bar kl-bar-t"></div>

@@ -11,7 +11,7 @@ function ContactComponents() {
     const [_success, setSuccess]    = useState<boolean>(false);
     const [minheight, setminHeight] = useState<number>();
     const [_name, setName]          = useState<string>('');
-    const { data }                  = useContext<{data:GlobalDataType}>(userContext); 
+    const  data                     = useContext<GlobalDataType>(userContext); 
     const [isLoading,setIsLoading]  = useState<boolean>(false);
     const [status,setStatus]        = useState<string>('hide');
     const form                      = useRef<HTMLFormElement>(null);

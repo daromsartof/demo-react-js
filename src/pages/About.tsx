@@ -1,6 +1,5 @@
 import React from 'react';
 import Civils from '../components/Civils';
-import Header from '../components/Header';
 import Skills from '../components/Skills';
 
 function About() {  

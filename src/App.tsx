@@ -17,9 +17,7 @@ import PageNotFound from './pages/PageNotFound';
 
 
 
-export const userContext = createContext({
-  data : initialData
-});
+export const userContext = createContext(initialData);
 function App() {
   const [showHeader,setHeader] = useState(false);
   const [data, setData]        = useState(initialData);
@@ -46,7 +44,7 @@ function App() {
       getData();   
   },[]);
   return (
-    <userContext.Provider value={{data}}>
+    <userContext.Provider value={data}>
       <div className={"animate__animated "+_class+" animate__delay-2s"}>
         <BrowserRouter> 
          {showHeader && <Header data={data} setShowHeader={setHeader} /> }
@@ -65,5 +63,8 @@ function App() {
 
   );
 }
+export const Button = ({onClick, children} : any) => (
+  <button onClick={onClick}>{children}</button>
+)
 
 export default App;

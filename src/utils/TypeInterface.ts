@@ -62,6 +62,6 @@ export type getDataType = () => void;
 export interface GlobalDataType {
     SkilsCategory:Array<SkilsCategoryType>
     skils: Array<SkilsType>,
-    profils: dataType,
+    profils: dataType | any,
     porfolio:Array<PortFolioType>
 }

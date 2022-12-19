@@ -1,19 +1,11 @@
 
 import React, { useContext } from 'react';
 import { userContext } from '../App';
+import { GlobalDataType } from '../utils/TypeInterface';
 import Description from './Description'
 
 function Civils() {
-    const { data }   = useContext(userContext); 
-
-    const formatDate = (dateString:string) => {
-        var date:any    = dateString.slice(0,10).split('-');
-        var now         = new Date(date[0],date[1]- 1,date[2]);
-        var options:any = { year: 'numeric', month: 'long', day: 'numeric' };
-        return now.toLocaleDateString("fr", options);
-    }
-
-
+    const  data    = useContext<GlobalDataType>(userContext); 
     return (
         <section className="kl-about-body">
             <Description _title="Etat Civil" _more="" />
